@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Poppins:ital,wght@0,200;0,400;0,700;1,600&display=swap');
+
+:root {
+    --fonte-principal: 'Poppins';
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media only screen and (max-device-width: 900px) {
+    /* .menu { width:100%; } */
+    }
+
+
+
+/* Reset de Estilos */
+* {
+    margin: 0; /* zerar a margem de todos os elementos */
+    padding: 0; /* zerar o espaçamento interno de todos os elementos */
+    box-sizing: border-box; /* incluir padding e borda no cálculo do tamanho do elemento */
+}
+
+body {
+    font-family: var(--fonte-principal);
+    background-color: #f0f0f0;
+}
+
+h1 {
+    position: relative;
+    margin-right: 1400px;
+    top: 20px;
+    font-size: 50px;
+    right: 100px;
+}
+header {
+    background-color: #247dd1; /* cor de fundo */
+    color: #fff; /* cor do texto */
+    text-align: center; /* alinhamento centralizado */
+    padding: 10px;
+}
+nav ul {
+    list-style: none; /* Remove o estilo da lista */
+}
+
+nav li {
+    position: relative;
+    display: inline;
+    margin-left: 90px;
+    bottom: 40px;
+    left: 200px;
+    font-size: 30px;
+}
+
+nav li:hover {
+    background-color: rgb(37, 7, 7);
+    color: #a81616;
+    transition: 1s;
+}
+
+nav a {
+    text-decoration: none; /* Remove o sublinhado dos links */
+    font-weight: bold; /* Deixa o texto em negrito */
+    color: #fff; /* Cor do texto */
+}
