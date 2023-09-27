@@ -1,0 +1,149 @@
+<!-- cadastro.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Participantes</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <script>
+        function gebi(id){
+            return document.getElementById(id)
+         }
+
+         function validar(){
+            var campoNome = gebi("IdNome");
+            var valorNome = campoNome.value;
+            var campoMatricula = gebi("idMatricula");
+            var valorMatricula = campoMatricula.value;
+            var campoCPF = gebi("cpf");
+            var valorCPF = campoCPF.value;
+            var campoEmail = gebi("idEmail"); 
+            var valorEmail = campoEmail.value; 
+         }
+    </script>
+    <header>
+        <h1>SCI VIII</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Maratona</a></li>
+                <li><a href="#">Jogos Eletrônicos</a></li>  
+                <li><a href="#">Cronograma</a></li> 
+                <li><a href="#">Fotos</a></li> 
+                <li><a href="cadastro.html">Inscreva-se</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="container">
+            <!-- Aqui vai o formulário -->
+
+            <form>
+                <fieldset>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+                    <style>
+                        label.error {
+                            color: red;
+                            font-size: 14px;
+                        }
+                    </style>
+                </head>
+            
+                <body>
+                    <form id="cad-form" action="http://jkorpela.fi/cgi-bin/echo.cgi">
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" required>
+                        <br>
+                        <label for="matricula">Matrícula:</label>
+                        <input type="number" id="matricula" name="matricula" required>
+                        <br>
+                        <label for="cpf">CPF:</label>
+                        <input type="number" id="cpf" name="cpf" required>
+                        <br>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                        <br>
+                        <p>Turma:</p>
+                        <label for="turma">Info 1A:</label>
+                        <input type="radio" id="1A" name="1A" required>
+                        <br>
+                        <label for="turma">Info 1B:</label>
+                        <input type="radio" id="1B" name="1B" required>
+                        <br>
+                        <label for="turma">Info 2A:</label>
+                        <input type="radio" id="2A" name="2A" required>
+                        <br>
+                        <label for="turma">Info 2B:</label>
+                        <input type="radio" id="2B" name="2B" required>
+                        <br>
+                        <label for="turma">Info 3A:</label>
+                        <input type="radio" id="3A" name="3A" required>
+                        <br>
+                        <label for="turma">Info 3B:</label>
+                        <input type="radio" id="3B" name="3B" required>
+                        <br>
+                        <button type="submit">Enviar</button>
+                    </form>
+<script>
+                    $(document).ready(function () {
+                        $('#cad-form').validate({
+                            rules: {
+                                nome: {
+                                    required: true,
+                                    minlength: 2,
+                                    maxlength: 30
+                                },
+                                matricula: {
+                                    required: true,
+                                    digits: true,
+                                    minlength: 10,
+                                    maxlength: 10
+                                },
+                                cpf: {
+                                    required: true,
+                                    digits: true,
+                                    minlength: 11,
+                                    maxlength: 11
+                                },
+                                email: {
+                                    required: true,
+                                    digits: true,
+                                    minlength: 10,
+                                    maxlength: 40
+                                }, 
+                            },
+                            messages: {
+                                nome: {
+                                    required: "O campo Nome é obrigatório",
+                                    minlength: "O Nome deve conter no mínimo 3 letras",
+                                    maxlength: "O CEP deve conter no máximo 30 letras"
+        
+                                },
+                                matricula: {
+                                    required: "O campo matrícula é obrigatório",
+                                    digits: "O campo Idade deve conter apenas dígitos",
+                                    minlength: "O Matrícula deve conter 10 letras",
+                                    maxlength: "O Matrícula deve conter 10 letras"   
+                                                             },
+                                cpf: {
+                                    required: "O campo CPF é obrigatório",
+                                    digits: "O campo CPF deve conter apenas dígitos",
+                                    minlength: "O CPF deve conter 11 números",
+                                    maxlength: "O CPF deve conter 11 números"
+                                },
+                                email: {
+                                    required: "O campo Email é obrigatório",
+                                }
+                            }
+                        });
+                    });
+                </script>
+        </section>
+    </main>
+</body>
+</html>
