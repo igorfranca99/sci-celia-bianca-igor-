@@ -3,15 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orçamento</title>
+    <title>Armazenamento</title>
+    <script>
+        var total = localStorage.getItem("inscritos");
+        if(total !== null) {
+            alert("Total de inscritos: " + total);
+        } else {
+            total = prompt('Digite o total de inscritos: ');
+            localStorage.setItem('inscritos', total);
+        }
+        document.write('Total de inscritos: ' + total);
+    </script>
 </head>
 <body>
-    <script>
-        
-    </script>
-
-    <h1>Calculadora de Orçamento para o Evento SCI</h1>
-    <h2>Dados do Evento</h2>
-    
+    <button onclick="localStorage.removeItem('Inscritos')">
+        Remover do Armazenamento
+    </button>
 </body>
 </html>

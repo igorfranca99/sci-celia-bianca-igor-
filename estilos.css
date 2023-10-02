@@ -63,3 +63,25 @@ nav a {
     font-weight: bold; /* Deixa o texto em negrito */
     color: #fff; /* Cor do texto */
 }
+
+fieldset {
+    width: 570px;
+    margin-left: 700px;
+    margin-top: 40px;
+}
+
+fieldset button {
+    margin-left: 250px;
+    font-size: 25px;
+    color: white;
+    background-color: purple;
+    
+}
+
+label {
+    width: 90px;
+}
+
+legend{
+    text-align: center;
+}

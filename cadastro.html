@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Participantes</title>
     <link rel="stylesheet" href="estilos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+                    <style>
+                        label.error {
+                            color: red;
+                            font-size: 14px;
+                            width: 1px;
+                        }
+                    </style>
+                </head>
 </head>
 <body>
 
@@ -13,17 +23,7 @@
         function gebi(id){
             return document.getElementById(id)
          }
-
-         function validar(){
-            var campoNome = gebi("IdNome");
-            var valorNome = campoNome.value;
-            var campoMatricula = gebi("idMatricula");
-            var valorMatricula = campoMatricula.value;
-            var campoCPF = gebi("cpf");
-            var valorCPF = campoCPF.value;
-            var campoEmail = gebi("idEmail"); 
-            var valorEmail = campoEmail.value; 
-         }
+        
     </script>
     <header>
         <h1>SCI VIII</h1>
@@ -41,22 +41,12 @@
     <main>
         <section class="container">
             <!-- Aqui vai o formulário -->
-
-            <form>
-                <fieldset>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
-                    <style>
-                        label.error {
-                            color: red;
-                            font-size: 14px;
-                        }
-                    </style>
-                </head>
+                    
             
-                <body>
                     <form id="cad-form" action="http://jkorpela.fi/cgi-bin/echo.cgi">
-                        <label for="nome">Nome:</label>
+                        <fieldset>
+                            <legend>Inscrição</legend>
+                            <label for="nome">Nome:</label>
                         <input type="text" id="nome" name="nome" required>
                         <br>
                         <label for="matricula">Matrícula:</label>
@@ -68,26 +58,27 @@
                         <label for="email">Email:</label>
                         <input type="email" id="email" name="email" required>
                         <br>
-                        <p>Turma:</p>
+                        
                         <label for="turma">Info 1A:</label>
-                        <input type="radio" id="1A" name="1A" required>
+                        <input type="radio" id="1A" name="turma" required>
                         <br>
                         <label for="turma">Info 1B:</label>
-                        <input type="radio" id="1B" name="1B" required>
+                        <input type="radio" id="1B" name="turma" required>
                         <br>
                         <label for="turma">Info 2A:</label>
-                        <input type="radio" id="2A" name="2A" required>
+                        <input type="radio" id="2A" name="turma" required>
                         <br>
                         <label for="turma">Info 2B:</label>
-                        <input type="radio" id="2B" name="2B" required>
+                        <input type="radio" id="2B" name="turma" required>
                         <br>
                         <label for="turma">Info 3A:</label>
-                        <input type="radio" id="3A" name="3A" required>
+                        <input type="radio" id="3A" name="turma" required>
                         <br>
                         <label for="turma">Info 3B:</label>
-                        <input type="radio" id="3B" name="3B" required>
+                        <input type="radio" id="3B" name="turma" required>
                         <br>
                         <button type="submit">Enviar</button>
+                    </fieldset>
                     </form>
 <script>
                     $(document).ready(function () {
@@ -112,33 +103,38 @@
                                 },
                                 email: {
                                     required: true,
-                                    digits: true,
                                     minlength: 10,
                                     maxlength: 40
                                 }, 
+                                turma: {
+                                    required: true
+                                }
                             },
                             messages: {
                                 nome: {
-                                    required: "O campo Nome é obrigatório",
-                                    minlength: "O Nome deve conter no mínimo 3 letras",
-                                    maxlength: "O CEP deve conter no máximo 30 letras"
+                                    required: " O campo Nome é obrigatório",
+                                    minlength: " O Nome deve conter no mínimo 2 letras",
+                                    maxlength: " O CEP deve conter no máximo 30 letras"
         
                                 },
                                 matricula: {
-                                    required: "O campo matrícula é obrigatório",
-                                    digits: "O campo Idade deve conter apenas dígitos",
-                                    minlength: "O Matrícula deve conter 10 letras",
-                                    maxlength: "O Matrícula deve conter 10 letras"   
+                                    required: " O campo matrícula é obrigatório",
+                                    digits: " O campo Idade deve conter apenas dígitos",
+                                    minlength: " O Matrícula deve conter 10 letras",
+                                    maxlength: " O Matrícula deve conter 10 letras"   
                                                              },
                                 cpf: {
-                                    required: "O campo CPF é obrigatório",
-                                    digits: "O campo CPF deve conter apenas dígitos",
-                                    minlength: "O CPF deve conter 11 números",
-                                    maxlength: "O CPF deve conter 11 números"
+                                    required: " O campo CPF é obrigatório",
+                                    digits: " O campo CPF deve conter apenas dígitos",
+                                    minlength: " O CPF deve conter 11 números",
+                                    maxlength: " O CPF deve conter 11 números"
                                 },
                                 email: {
-                                    required: "O campo Email é obrigatório",
-                                }
+                                    required: " O campo Email é obrigatório",
+                                    minlength: " O email deve ter no mínimo 10 caracteres",
+                                    maxlength: " O email deve ter no máximo 10 caracteres"
+                                },
+                                turma: "                 Selecione uma opção"
                             }
                         });
                     });
