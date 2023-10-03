@@ -10,10 +10,12 @@
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
                     <style>
                         label.error {
+                            display: inline;
                             color: red;
                             font-size: 14px;
                             width: 1px;
                         }
+
                     </style>
                 </head>
 </head>
@@ -45,7 +47,7 @@
             
                     <form id="cad-form" action="http://jkorpela.fi/cgi-bin/echo.cgi">
                         <fieldset>
-                            <legend>Inscrição</legend>
+                            <h2 class="titulo">Inscrição</h1>
                             <label for="nome">Nome:</label>
                         <input type="text" id="nome" name="nome" required>
                         <br>
@@ -58,27 +60,20 @@
                         <label for="email">Email:</label>
                         <input type="email" id="email" name="email" required>
                         <br>
-                        
-                        <label for="turma">Info 1A:</label>
-                        <input type="radio" id="1A" name="turma" required>
                         <br>
-                        <label for="turma">Info 1B:</label>
-                        <input type="radio" id="1B" name="turma" required>
-                        <br>
-                        <label for="turma">Info 2A:</label>
-                        <input type="radio" id="2A" name="turma" required>
-                        <br>
-                        <label for="turma">Info 2B:</label>
-                        <input type="radio" id="2B" name="turma" required>
-                        <br>
-                        <label for="turma">Info 3A:</label>
-                        <input type="radio" id="3A" name="turma" required>
-                        <br>
-                        <label for="turma">Info 3B:</label>
-                        <input type="radio" id="3B" name="turma" required>
-                        <br>
-                        <button type="submit">Enviar</button>
-                    </fieldset>
+                        <p>Selecione sua turma:</p>
+
+                        <select name="turma" id="turma" required>
+                            <option value="">Selecione a Turma</option>
+                            <option value="1a">Turma 1A</option>
+                            <option value="1b">Turma 1B</option>
+                            <option value="2a">Turma 2A</option>
+                            <option value="2b">Turma 2B</option>
+                            <option value="3a">Turma 3A</option>
+                            <option value="3b">Turma 3B</option>
+                        </select><br>
+                        <button type="submit" form="cad-form" value="Submit">Enviar</button>
+                         </fieldset>
                     </form>
 <script>
                     $(document).ready(function () {
@@ -120,8 +115,8 @@
                                 matricula: {
                                     required: " O campo matrícula é obrigatório",
                                     digits: " O campo Idade deve conter apenas dígitos",
-                                    minlength: " O Matrícula deve conter 10 letras",
-                                    maxlength: " O Matrícula deve conter 10 letras"   
+                                    minlength: " O Matrícula deve conter 10 números",
+                                    maxlength: " O Matrícula deve conter 10 números"   
                                                              },
                                 cpf: {
                                     required: " O campo CPF é obrigatório",
@@ -130,9 +125,11 @@
                                     maxlength: " O CPF deve conter 11 números"
                                 },
                                 email: {
+                                    email: "Digite um email válido",
                                     required: " O campo Email é obrigatório",
                                     minlength: " O email deve ter no mínimo 10 caracteres",
                                     maxlength: " O email deve ter no máximo 10 caracteres"
+                                    
                                 },
                                 turma: "                 Selecione uma opção"
                             }
