@@ -118,3 +118,7 @@ h2 {
 legend{
     text-align: center;
 }
+
+li {
+    display: inline;
+}

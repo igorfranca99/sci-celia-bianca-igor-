@@ -1,30 +1,132 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="orcamento.css">
     <title>Armazenamento</title>
     <script>
-        var total = localStorage.getItem("inscritos");
-        if(total !== null) {
-            alert("Total de inscritos: " + total);
-        } else {
-            total = prompt('Digite o total de inscritos: ');
-            localStorage.setItem('inscritos', total);
+        function recuperar() {
+            var total = localStorage.getItem("inscritos");
+            if (total !== null) {
+                alert("Total de inscritos: " + total);
+            } else {
+                total = prompt('Digite o total de inscritos: ');
+                localStorage.setItem('inscritos', total);
+            }
+            document.getElementById('inscritos').value = total;
+
         }
-        document.write('Total de inscritos: ' + total);
+        function gebi(id) {
+            return document.getElementById(id)
+        }
+        function multiplicar() {
+            let valorN1 = parseInt(gebi("quantidade").value)
+            let valorN2 = parseInt(gebi("preco").value)
+            let totalcafe = valorN1 * valorN2
+            gebi('totalCafe').value = totalcafe
+        }
     </script>
 </head>
-<body>
+
+<body onload="recuperar()">
     <h1>Calculadora de Orçamento para o Evento SCI</h1><br>
     <br>
     <h2>Dados do Evento</h2>
-    <p>Número de Participantes:</p>
-    
-    
-
+    Número de Participantes: <input type="number" id="inscritos" readonly><br>
+    <br>
     <button onclick="localStorage.removeItem('Inscritos')">
         Remover do Armazenamento
     </button>
+    <br>
+    <h2>Custos de Produtos Alimentícios</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Produtos</th>
+                <th>Quantidade por Participante</th>
+                <th>Preço por Unidade</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr> <!--linha-->
+                <TD>Café</TD>
+                <td><input type="number" id="quantidade" onblur="multiplicar()"></td>
+                <td><input type="number" id="preco" onblur="multiplicar()"></td>
+                <p id="totalCafe"></p>
+            </tr>
+
+            <tr> <!--linha-->
+                <TD>Bolo</TD>
+                <td><input type="number" id="quantidade2"></td>
+                <td><input type="number" id="preco2"></td>
+                <p id="totalBolo"></p>
+            </tr>
+            <tr> <!--linha-->
+                <TD>Cachorro-Quente</TD>
+                <td><input type="number" id="quantidade3"></td>
+                <td><input type="number" id="preco3"></td>
+                <p id="totalCachorro"></p>
+            </tr>
+        </tbody>
+    </table>
+    <h2>Custos de Itens de Divulgação</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Quantidade</th>
+                <th>Preço por Unidade</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr> <!--linha-->
+                <TD>Banner</TD>
+                <td><input type="number" id="quantidadeDivulgacao"></td>
+                <td><input type="number" id="precoDivulgacao"></td>
+                <p id="totalBanner"></p>
+            </tr>
+            <tr> <!--linha-->
+                <TD>Crachá</TD>
+                <td><input type="number" id="quantidadeDivulgacao2"></td>
+                <td><input type="number" id="precoDivulgacao2"></td>
+                <p id="totalCracha"></p>
+            </tr>
+            <tr> <!--linha-->
+                <TD>Camiseta</TD>
+                <td><input type="number" id="quantidadeDivulgacao3"></td>
+                <td><input type="number" id="precoDivulgacao3"></td>
+                <p id="totalCamiseta"></p>
+            </tr>
+        </tbody>
+    </table>
+    <h2>Custos Totais</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Tipo</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Produtos Alimentícios</td>
+                <td id="totalAlimentacao"></td>
+            </tr>
+            <tr>
+                <td>Divulgação</td>
+                <td id="totalDivulgacao"></td>
+            </tr>
+            <tr>
+                <td>Custo Total do Evento</td>
+            <tr id="totalEvento"></tr>
+        </tbody>
+</table>
+        <button>Calcular Orçamento</button>
 </body>
+
 </html>
