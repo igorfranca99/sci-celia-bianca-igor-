@@ -8,15 +8,20 @@
     <title>Armazenamento</title>
     <script>
         function recuperar() {
-            var total = localStorage.getItem("inscritos");
-            if (total !== null) {
+            var total = localStorage.getItem('inscritos');
+            alert(total)
+          /*  if (total !== null) {
                 alert("Total de inscritos: " + total);
             } else {
                 total = prompt('Digite o total de inscritos: ');
                 localStorage.setItem('inscritos', total);
-            }
+            } */
             document.getElementById('inscritos').value = total;
 
+        }
+
+        function remover(){
+            localStorage.removeItem('inscritos')
         }
         function gebi(id) {
             return document.getElementById(id)
@@ -96,7 +101,7 @@
     <h2>Dados do Evento</h2>
     Número de Participantes: <input type="number" id="inscritos" readonly><br>
     <br>
-    <button onclick="localStorage.removeItem('Inscritos')">
+    <button onclick="remover()">
         Remover do Armazenamento
     </button>
     <br>
@@ -186,7 +191,6 @@
             <td><input type="number" id="totalEvento" readonly></td>
         </tbody>
 </table>
-        <button>Calcular Orçamento</button>
 </body>
 
 </html>

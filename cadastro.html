@@ -24,7 +24,14 @@
     <script>
         function gebi(id){
             return document.getElementById(id)
-         }
+        }
+            function salvar() {
+                var total = localStorage.getItem('inscritos');
+                var num = parseInt(total)
+                localStorage.setItem('inscritos', num)
+            }
+
+         
         
     </script>
     <header>
@@ -72,7 +79,7 @@
                             <option value="3a">Turma 3A</option>
                             <option value="3b">Turma 3B</option>
                         </select><br>
-                        <button type="submit" form="cad-form" value="Submit">Enviar</button>
+                        <button type="submit" form="cad-form" value="Submit" onclick="salvar()">Enviar</button>
                          </fieldset>
                     </form>
 <script>
