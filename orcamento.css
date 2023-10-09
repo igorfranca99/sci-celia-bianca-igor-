@@ -2,6 +2,21 @@ table {
     border: 1;
 }
 
-tr {
-    
+#totalCafe {
+    width: 70px;
+}
+#totalBolo {
+    width: 70px;
+}
+#totalCachorro {
+    width: 70px;
+}
+#totalBanner {
+    width: 70px;
+}
+#totalCracha {
+    width: 70px;
+}
+#totalCamiseta {
+    width: 70px;
 }

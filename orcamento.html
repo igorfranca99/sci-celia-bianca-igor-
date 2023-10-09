@@ -21,11 +21,71 @@
         function gebi(id) {
             return document.getElementById(id)
         }
-        function multiplicar() {
+        function multiplicarCafe() {
             let valorN1 = parseInt(gebi("quantidade").value)
             let valorN2 = parseInt(gebi("preco").value)
             let totalcafe = valorN1 * valorN2
             gebi('totalCafe').value = totalcafe
+            somarComida()
+        }
+        function multiplicarBolo() {
+            let valorN1 = parseInt(gebi("quantidade2").value)
+            let valorN2 = parseInt(gebi("preco2").value)
+            let totalbolo = valorN1 * valorN2
+            gebi('totalBolo').value = totalbolo
+            somarComida()
+        }
+        function multiplicarCachorro() {
+            let valorN1 = parseInt(gebi("quantidade3").value)
+            let valorN2 = parseInt(gebi("preco3").value)
+            let totalcachorro = valorN1 * valorN2
+            gebi('totalCachorro').value = totalcachorro
+            somarComida()
+        }
+        function multiplicarBanner() {
+            let valorN1 = parseInt(gebi("quantidadeDivulgacao").value)
+            let valorN2 = parseInt(gebi("precoDivulgacao").value)
+            let totalbanner = valorN1 * valorN2
+            gebi('totalBanner').value = totalbanner
+            somarItens()
+        }
+        function multiplicarCracha() {
+            let valorN1 = parseInt(gebi("quantidadeDivulgacao2").value)
+            let valorN2 = parseInt(gebi("precoDivulgacao2").value)
+            let totalcracha = valorN1 * valorN2
+            gebi('totalCracha').value = totalcracha
+            somarItens()
+        }
+        function multiplicarCamiseta() {
+            let valorN1 = parseInt(gebi("quantidadeDivulgacao3").value)
+            let valorN2 = parseInt(gebi("precoDivulgacao3").value)
+            let totalcamiseta = valorN1 * valorN2
+            gebi('totalCamiseta').value = totalcamiseta
+            somarItens()
+        }
+
+        function somarComida() {
+            let valorN1 = parseInt(gebi("totalCafe").value)
+            let valorN2 = parseInt(gebi("totalBolo").value)
+            let valorN3 = parseInt(gebi("totalCachorro").value)
+            let totalalimento = valorN1 + valorN2 + valorN3
+            gebi('totalAlimento').value = totalalimento
+            somarTudo()
+        }
+        function somarItens() {
+            let valorN1 = parseInt(gebi("totalBanner").value)
+            let valorN2 = parseInt(gebi("totalCracha").value)
+            let valorN3 = parseInt(gebi("totalCamiseta").value)
+            let totalitens= valorN1 + valorN2 + valorN3
+            gebi('totalItens').value = totalitens
+            somarTudo()
+        }
+
+        function somarTudo() {
+            let valorN1 = parseInt(gebi("totalAlimento").value)
+            let valorN2 = parseInt(gebi("totalItens").value)
+            let totalevento = valorN1 + valorN2
+            gebi('totalEvento').value = totalevento
         }
     </script>
 </head>
@@ -46,7 +106,7 @@
         <thead>
             <tr>
                 <th>Produtos</th>
-                <th>Quantidade por Participante</th>
+                <th>Quantidade por Pessoa</th>
                 <th>Preço por Unidade</th>
                 <th>Total</th>
             </tr>
@@ -54,22 +114,22 @@
         <tbody>
             <tr> <!--linha-->
                 <TD>Café</TD>
-                <td><input type="number" id="quantidade" onblur="multiplicar()"></td>
-                <td><input type="number" id="preco" onblur="multiplicar()"></td>
-                <p id="totalCafe"></p>
+                <td><input type="number" id="quantidade" onblur="multiplicarCafe()"></td>
+                <td><input type="number" id="preco" onblur="multiplicarCafe()"></td>
+                <td><input type="number" id="totalCafe" readonly></td>
             </tr>
 
             <tr> <!--linha-->
                 <TD>Bolo</TD>
-                <td><input type="number" id="quantidade2"></td>
-                <td><input type="number" id="preco2"></td>
-                <p id="totalBolo"></p>
+                <td><input type="number" id="quantidade2" onblur="multiplicarBolo()"></td>
+                <td><input type="number" id="preco2" onblur="multiplicarBolo()"></td>
+                <td><input type="number" id="totalBolo" readonly></td>
             </tr>
             <tr> <!--linha-->
                 <TD>Cachorro-Quente</TD>
-                <td><input type="number" id="quantidade3"></td>
-                <td><input type="number" id="preco3"></td>
-                <p id="totalCachorro"></p>
+                <td><input type="number" id="quantidade3" onblur="multiplicarCachorro()"></td>
+                <td><input type="number" id="preco3" onblur="multiplicarCachorro()"></td>
+                <td><input type="number" id="totalCachorro" readonly></td>
             </tr>
         </tbody>
     </table>
@@ -86,21 +146,21 @@
         <tbody>
             <tr> <!--linha-->
                 <TD>Banner</TD>
-                <td><input type="number" id="quantidadeDivulgacao"></td>
-                <td><input type="number" id="precoDivulgacao"></td>
-                <p id="totalBanner"></p>
+                <td><input type="number" id="quantidadeDivulgacao" onblur="multiplicarBanner()"></td>
+                <td><input type="number" id="precoDivulgacao" onblur="multiplicarBanner()"></td>
+                <td><input type="number" id="totalBanner" readonly></td>
             </tr>
             <tr> <!--linha-->
                 <TD>Crachá</TD>
-                <td><input type="number" id="quantidadeDivulgacao2"></td>
-                <td><input type="number" id="precoDivulgacao2"></td>
-                <p id="totalCracha"></p>
+                <td><input type="number" id="quantidadeDivulgacao2" onblur="multiplicarCracha()"></td>
+                <td><input type="number" id="precoDivulgacao2" onblur="multiplicarCracha()"></td>
+                <td><input type="number" id="totalCracha" readonly></td>
             </tr>
             <tr> <!--linha-->
                 <TD>Camiseta</TD>
-                <td><input type="number" id="quantidadeDivulgacao3"></td>
-                <td><input type="number" id="precoDivulgacao3"></td>
-                <p id="totalCamiseta"></p>
+                <td><input type="number" id="quantidadeDivulgacao3" onblur="multiplicarCamiseta()"></td>
+                <td><input type="number" id="precoDivulgacao3" onblur="multiplicarCamiseta()"></td>
+                <td><input type="number" id="totalCamiseta" readonly></td>
             </tr>
         </tbody>
     </table>
@@ -115,15 +175,15 @@
         <tbody>
             <tr>
                 <td>Produtos Alimentícios</td>
-                <td id="totalAlimentacao"></td>
+                <td><input type="number" id="totalAlimento" readonly></td>
             </tr>
             <tr>
                 <td>Divulgação</td>
-                <td id="totalDivulgacao"></td>
+                <td><input type="number" id="totalItens" readonly></td>
             </tr>
             <tr>
                 <td>Custo Total do Evento</td>
-            <tr id="totalEvento"></tr>
+            <td><input type="number" id="totalEvento" readonly></td>
         </tbody>
 </table>
         <button>Calcular Orçamento</button>
