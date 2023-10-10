@@ -75,6 +75,8 @@
             let valorN3 = parseInt(gebi("totalCachorro").value)
             let totalalimento = valorN1 + valorN2 + valorN3
             gebi('totalAlimento').value = totalalimento
+            gebi('totalAlimento2').value = totalalimento / 5.11
+            gebi('totalAlimento3').value = totalalimento / 5.41
             somarTudo()
         }
         function somarItens() {
@@ -83,6 +85,8 @@
             let valorN3 = parseInt(gebi("totalCamiseta").value)
             let totalitens= valorN1 + valorN2 + valorN3
             gebi('totalItens').value = totalitens
+            gebi('totalItens2').value = totalitens / 5.11
+            gebi('totalItens3').value = totalitens / 5.41
             somarTudo()
         }
 
@@ -91,6 +95,8 @@
             let valorN2 = parseInt(gebi("totalItens").value)
             let totalevento = valorN1 + valorN2
             gebi('totalEvento').value = totalevento
+            gebi('totalEvento2').value = totalevento / 5.11
+            gebi('totalEvento3').value = totalevento / 5.41
         }
     </script>
 </head>
@@ -174,21 +180,29 @@
         <thead>
             <tr>
                 <th>Tipo</th>
-                <th>Total</th>
+                <th>Total R$</th>
+                <th>Total $</th>
+                <th>Total €</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>Produtos Alimentícios</td>
                 <td><input type="number" id="totalAlimento" readonly></td>
+                <td><input type="number" id="totalAlimento2" readonly></td>
+                <td><input type="number" id="totalAlimento3" readonly></td>
             </tr>
             <tr>
                 <td>Divulgação</td>
                 <td><input type="number" id="totalItens" readonly></td>
+                <td><input type="number" id="totalItens2" readonly></td>
+                <td><input type="number" id="totalItens3" readonly></td>
             </tr>
             <tr>
                 <td>Custo Total do Evento</td>
             <td><input type="number" id="totalEvento" readonly></td>
+            <td><input type="number" id="totalEvento2" readonly></td>
+            <td><input type="number" id="totalEvento3" readonly></td>
         </tbody>
 </table>
 </body>

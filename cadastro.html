@@ -1,47 +1,35 @@
 <!-- cadastro.html -->
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Participantes</title>
     <link rel="stylesheet" href="estilos.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
-                    <style>
-                        label.error {
-                            display: inline;
-                            color: red;
-                            font-size: 14px;
-                            width: 1px;
-                        }
-
-                    </style>
-                </head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+    <style>
+        label.error {
+            display: inline;
+            color: red;
+            font-size: 14px;
+            width: 1px;
+        }
+    </style>
 </head>
+</head>
+
 <body>
 
-    <script>
-        function gebi(id){
-            return document.getElementById(id)
-        }
-            function salvar() {
-                var total = localStorage.getItem('inscritos');
-                var num = parseInt(total)
-                localStorage.setItem('inscritos', num)
-            }
-
-         
-        
-    </script>
     <header>
         <h1>SCI VIII</h1>
         <nav>
             <ul>
                 <li><a href="#">Maratona</a></li>
-                <li><a href="#">Jogos Eletrônicos</a></li>  
-                <li><a href="#">Cronograma</a></li> 
-                <li><a href="#">Fotos</a></li> 
+                <li><a href="#">Jogos Eletrônicos</a></li>
+                <li><a href="#">Cronograma</a></li>
+                <li><a href="#">Fotos</a></li>
                 <li><a href="cadastro.html">Inscreva-se</a></li>
             </ul>
         </nav>
@@ -50,100 +38,122 @@
     <main>
         <section class="container">
             <!-- Aqui vai o formulário -->
-                    
-            
-                    <form id="cad-form" action="http://jkorpela.fi/cgi-bin/echo.cgi">
-                        <fieldset>
-                            <h2 class="titulo">Inscrição</h1>
-                            <label for="nome">Nome:</label>
-                        <input type="text" id="nome" name="nome" required>
-                        <br>
-                        <label for="matricula">Matrícula:</label>
-                        <input type="number" id="matricula" name="matricula" required>
-                        <br>
-                        <label for="cpf">CPF:</label>
-                        <input type="number" id="cpf" name="cpf" required>
-                        <br>
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
-                        <br>
-                        <br>
-                        <p>Selecione sua turma:</p>
 
-                        <select name="turma" id="turma" required>
-                            <option value="">Selecione a Turma</option>
-                            <option value="1a">Turma 1A</option>
-                            <option value="1b">Turma 1B</option>
-                            <option value="2a">Turma 2A</option>
-                            <option value="2b">Turma 2B</option>
-                            <option value="3a">Turma 3A</option>
-                            <option value="3b">Turma 3B</option>
-                        </select><br>
-                        <button type="submit" form="cad-form" value="Submit" onclick="salvar()">Enviar</button>
-                         </fieldset>
-                    </form>
-<script>
-                    $(document).ready(function () {
-                        $('#cad-form').validate({
-                            rules: {
-                                nome: {
-                                    required: true,
-                                    minlength: 2,
-                                    maxlength: 30
-                                },
-                                matricula: {
-                                    required: true,
-                                    digits: true,
-                                    minlength: 10,
-                                    maxlength: 10
-                                },
-                                cpf: {
-                                    required: true,
-                                    digits: true,
-                                    minlength: 11,
-                                    maxlength: 11
-                                },
-                                email: {
-                                    required: true,
-                                    minlength: 10,
-                                    maxlength: 40
-                                }, 
-                                turma: {
-                                    required: true
-                                }
-                            },
-                            messages: {
-                                nome: {
-                                    required: " O campo Nome é obrigatório",
-                                    minlength: " O Nome deve conter no mínimo 2 letras",
-                                    maxlength: " O CEP deve conter no máximo 30 letras"
+
+            <form id="cad-form" action="http://jkorpela.fi/cgi-bin/echo.cgi">
+                <fieldset>
+                    <h2 class="titulo">Inscrição</h2>
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required value="teste">
+                    <label for="matricula">Matrícula:</label>
+                    <input type="number" id="matricula" name="matricula" required value="1234561231">
+                    <label for="cpf">CPF:</label>
+                    <input type="number" id="cpf" name="cpf" required value="12345678912">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required value="teste@teste.com">
+                    <p>Selecione sua turma:</p>
+
+                    <select name="turma" id="turma" required>
+                        <!-- <option value="">Selecione a Turma</option> -->
+                        <option value="1a">Turma 1A</option>
+                        <option value="1b">Turma 1B</option>
+                        <option value="2a">Turma 2A</option>
+                        <option value="2b">Turma 2B</option>
+                        <option value="3a">Turma 3A</option>
+                        <option value="3b">Turma 3B</option>
+                    </select><br>
+                    <button type="submit" form="cad-form" value="Submit">Enviar</button>
+                </fieldset>
+            </form>
+
+            <script>
+                /* function gebi(id) {
+                    return document.getElementById(id)
+                }*/
+
+                var form = document.querySelector('form');
+
+                form.addEventListener('submit', (event) => {
+                    salvar()
+                });
+                
+                function salvar() {
+                    
+                    var total = localStorage.getItem('inscritos');
         
-                                },
-                                matricula: {
-                                    required: " O campo matrícula é obrigatório",
-                                    digits: " O campo Idade deve conter apenas dígitos",
-                                    minlength: " O Matrícula deve conter 10 números",
-                                    maxlength: " O Matrícula deve conter 10 números"   
-                                                             },
-                                cpf: {
-                                    required: " O campo CPF é obrigatório",
-                                    digits: " O campo CPF deve conter apenas dígitos",
-                                    minlength: " O CPF deve conter 11 números",
-                                    maxlength: " O CPF deve conter 11 números"
-                                },
-                                email: {
-                                    email: "Digite um email válido",
-                                    required: " O campo Email é obrigatório",
-                                    minlength: " O email deve ter no mínimo 10 caracteres",
-                                    maxlength: " O email deve ter no máximo 10 caracteres"
-                                    
-                                },
-                                turma: "                 Selecione uma opção"
+                    // console.log("Total: ", total)
+        
+                    if (isNaN(total)) {
+                        localStorage.setItem('inscritos', 1)
+                    } else {
+                        var num = parseInt(total)
+                        localStorage.setItem('inscritos', num + 1)
+                    }
+                }
+
+
+                $(document).ready(function () {
+                    $('#cad-form').validate({
+                        rules: {
+                            nome: {
+                                required: true,
+                                minlength: 2,
+                                maxlength: 30
+                            },
+                            matricula: {
+                                required: true,
+                                digits: true,
+                                minlength: 10,
+                                maxlength: 10
+                            },
+                            cpf: {
+                                required: true,
+                                digits: true,
+                                minlength: 11,
+                                maxlength: 11
+                            },
+                            email: {
+                                required: true,
+                                minlength: 10,
+                                maxlength: 40
+                            },
+                            turma: {
+                                required: true
                             }
-                        });
+                        },
+                        messages: {
+                            nome: {
+                                required: " O campo Nome é obrigatório",
+                                minlength: " O Nome deve conter no mínimo 2 letras",
+                                maxlength: " O CEP deve conter no máximo 30 letras"
+
+                            },
+                            matricula: {
+                                required: " O campo matrícula é obrigatório",
+                                digits: " O campo Idade deve conter apenas dígitos",
+                                minlength: " O Matrícula deve conter 10 números",
+                                maxlength: " O Matrícula deve conter 10 números"
+                            },
+                            cpf: {
+                                required: " O campo CPF é obrigatório",
+                                digits: " O campo CPF deve conter apenas dígitos",
+                                minlength: " O CPF deve conter 11 números",
+                                maxlength: " O CPF deve conter 11 números"
+                            },
+                            email: {
+                                email: "Digite um email válido",
+                                required: " O campo Email é obrigatório",
+                                minlength: " O email deve ter no mínimo 10 caracteres",
+                                maxlength: " O email deve ter no máximo 10 caracteres"
+
+                            },
+                            turma: "                 Selecione uma opção"
+                        }
                     });
-                </script>
+                });
+            </script>
         </section>
     </main>
 </body>
+
 </html>
