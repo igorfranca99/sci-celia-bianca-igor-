@@ -99,8 +99,8 @@
             let valorN3 = parseFloat(gebi("totalCachorro").value)
             let totalalimento = valorN1 + valorN2 + valorN3
             gebi('totalAlimento').value = totalalimento.toFixed(2)
-            gebi('totalAlimento2').value = (totalalimento / 5.06).toFixed(2)
-            gebi('totalAlimento3').value = (totalalimento / 5.41).toFixed(2)
+            gebi('totalAlimento2').value = (totalalimento / 5.05).toFixed(2)
+            gebi('totalAlimento3').value = (totalalimento / 5.33).toFixed(2)
             somarTudo()
         }
         function somarItens() {
@@ -109,8 +109,8 @@
             let valorN3 = parseFloat(gebi("totalCamiseta").value)
             let totalitens = valorN1 + valorN2 + valorN3
             gebi('totalItens').value = totalitens.toFixed(2)
-            gebi('totalItens2').value = (totalitens / 5.06).toFixed(2)
-            gebi('totalItens3').value = (totalitens / 5.41).toFixed(2)
+            gebi('totalItens2').value = (totalitens / 5.05).toFixed(2)
+            gebi('totalItens3').value = (totalitens / 5.33).toFixed(2)
             somarTudo()
         }
 
@@ -119,8 +119,8 @@
             let valorN2 = parseFloat(gebi("totalItens").value)
             let totalevento = valorN1 + valorN2
             gebi('totalEvento').value = totalevento.toFixed(2)
-            gebi('totalEvento2').value = (totalevento / 5.06).toFixed(2)
-            gebi('totalEvento3').value = (totalevento / 5.41).toFixed(2)
+            gebi('totalEvento2').value = (totalevento / 5.05).toFixed(2)
+            gebi('totalEvento3').value = (totalevento / 5.33).toFixed(2)
         }
 
         function montarTexto() {
@@ -145,7 +145,7 @@
             let totalComida = gebi("totalAlimento").value
             let totalItens = gebi("totalItens").value
             let tudo = gebi("totalEvento").value
-            gebi('email').value = qntCafe + " cafés foram comprados, cada um custava R$" + precoCafe + ", no total foram arrecadados R$" + precoTotal + ", " + qntBolo + " bolos foram comprados, cada um custava R$" + precoBolo + ", no total foram arrecadados R$" + totalBolo + ", " + qntCachorro + " cachorros-quentes foram comprados, cada um custava R$" + precoCachorro + ", no total foram arrecadados R$" + totalCachorro + ", " + qntBanner + " banners foram comprados, cada um custava R$" + precoBanner + ", no total foram arrecadados R$" + totalBanner + ", " + qntCracha + " crachás foram comprados, cada um custava R$" + precoCracha + ", no total foram arrecadados R$" + totalCracha + ", " + qntCamiseta + " camisetas foram compradas, cada uma custava R$" + precoCamiseta + ", no total foram arrecadados R$" + totalCamiseta + ". " + "No total, com todos os alimentos vendidos foram arrecadados R$" + totalComida + ", com todos os produtos vendidos foram arrecadados R$" + totalItens + ", com todo o evento, foram arrecadados R$" + tudo + "."
+            gebi('email').value = qntCafe + " cafés foram comprados, cada um custava R$" + precoCafe + ", no total foram arrecadados R$" + precoTotal + ", " + qntBolo + " bolos foram comprados, cada um custava R$" + precoBolo + ", no total foram arrecadados R$" + totalBolo + ", " + qntCachorro + " cachorros-quentes foram comprados, cada um custava R$" + precoCachorro + ", no total foram arrecadados R$" + totalCachorro + ", " + qntBanner + " banners foram comprados, cada um custava R$" + precoBanner + ", no total foram arrecadados R$" + totalBanner + ", " + qntCracha + " crachás foram comprados, cada um custava R$" + precoCracha + ", no total foram arrecadados R$" + totalCracha + ", " + qntCamiseta + " camisetas foram compradas, cada uma custava R$" + precoCamiseta + ", no total foram arrecadados R$" + totalCamiseta + ". " + "No total, com todos os alimentos vendidos foram arrecadados R$" + totalComida + ", com todos os produtos vendidos foram arrecadados R$" + totalItens + ", com todo o evento, foram arrecadados R$" + tudo + ". Assinado: Igor Soares, Célia Camili, Bianca Torcatto." 
         }
     </script>
 </head>
@@ -153,12 +153,13 @@
 <body onload="recuperar()">
     <h1>Calculadora de Orçamento para o Evento SCI</h1><br>
     <br>
-    <h2>Dados do Evento</h2>
+    <section class="dados"><h2>Dados do Evento</h2>
     Número de Participantes: <input type="number" id="inscritos" readonly><br>
     <br>
     <button onclick="remover()">
         Remover do Armazenamento
     </button>
+</section>
     <br>
     <h2>Custos de Produtos Alimentícios</h2>
 
@@ -230,8 +231,8 @@
             <tr>
                 <th>Tipo</th>
                 <th>Total R$</th>
-                <th>Total $</th>
-                <th>Total €</th>
+                <th>Total $ (R$5,05)</th>
+                <th>Total € (R$5,33)</th>
             </tr>
         </thead>
         <tbody>
@@ -254,9 +255,9 @@
                 <td><input type="number" id="totalEvento3" readonly></td>
         </tbody>
     </table>
-    <input type="button" value="Montar Texto" onclick="montarTexto()">
+    <input type="button" class="botao" value="Montar Texto" onclick="montarTexto()">
     <form id="idForm" action="https://app.headlessforms.cloud/api/v1/form-submission/nkJtA1ewcj" method="POST">
-        <textarea name="corpo" id="email" cols="100" id="corpo" rows="7" placeholder="O texto do seu e-mail."
+        <textarea name="corpo" id="email" cols="100" rows="7" placeholder="O texto do seu e-mail."
             required></textarea><br>
         <input type="submit" value="Enviar" onclick="">
     </form>

@@ -22,31 +22,74 @@ table {
 }
 
 #totalAlimento {
-    width: 70px;
+    width: 120px;
+    text-align: center;
 }
 #totalAlimento2 {
-    width: 70px;
+    width: 120px;
+    text-align: center;
+
 }
 #totalAlimento3 {
-    width: 70px;
+    width: 120px;
+    text-align: center;
+
 }
 
 #totalItens {
-    width: 70px;
+    width: 120px;
+    text-align: center;
+
 }
 #totalItens2 {
-    width: 70px;
+    width: 120px;
+    text-align: center;
+
 }
 #totalItens3 {
-    width: 70px;
+    width: 120px;
+    text-align: center;
+
+}
+
+* {
+    text-align: center;
+    margin: auto;
+
+    box-sizing: border-box;
+
+}
+
+h2 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.botao {
+    margin-top: 20px;
+}
+
+table {
+    border: 3px;
+    background-color: rgb(158, 191, 219);
+}
+
+.dados {
+    border: 10px inset rgb(150, 150, 224);
+    margin-right: 500px;
+    margin-left: 550px;
+    padding-bottom: 10px;
 }
 
 #totalEvento {
-    width: 70px;
+    width: 120px;
+    text-align: center;
 }
 #totalEvento2 {
-    width: 70px;
+    width: 120px;
+    text-align: center;
 }
 #totalEvento3 {
-    width: 70px;
+    width: 120px;
+    text-align: center;
 }
