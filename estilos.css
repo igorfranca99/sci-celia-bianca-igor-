@@ -14,6 +14,7 @@ html {
 
 
 
+
 /* Reset de Estilos */
 * {
     margin: 0; /* zerar a margem de todos os elementos */
@@ -24,10 +25,11 @@ html {
 body {
     font-family: var(--fonte-principal);
     background-color: #f0f0f0;
+    width: 1900px;
+    max-width: 100%;
 }
 
 h1 {
-    position: relative;
     margin-right: 1300px;
     margin-top: 0px;
     font-size: 50px;
@@ -71,8 +73,8 @@ nav a {
 }
 
 fieldset {
-    width: 570px;
-    margin-left: 550px;
+    width: 500px;
+    margin-left: 700px;
     margin-top: 40px;
     padding-left: 5px;
     color: purple;
@@ -86,7 +88,7 @@ fieldset {
 fieldset button {
     margin-top: 10px;
     margin-bottom: 10px;
-    margin-left: 240px;
+    margin-left: 200px;
     font-size: 20px;
     border: 50px;
     border-radius: 30px;
@@ -111,12 +113,8 @@ label {
 
 
 h2 {
-    margin-left: 225px;
+    margin-left: 180px;
     text-shadow: 2px 2px rgba(0, 0, 255, 0.24);
-}
-
-legend{
-    text-align: center;
 }
 
 li {

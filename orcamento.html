@@ -11,7 +11,7 @@
 
 <body onload="recuperar()">
     <h1>Calculadora de Orçamento para o Evento SCI</h1>
-    <div class="col-4">
+    <section class="container">
         <h2>Dados do Evento</h2>
         Número de Participantes: <input type="number" id="inscritos" readonly>
 
@@ -19,9 +19,8 @@
             Remover do Armazenamento
         </button>
 
-</div>
 
-<div class="col-8">
+
         <h2>Custos de Produtos Alimentícios</h2>
 
         <table>
@@ -55,78 +54,79 @@
                 </tr>
             </tbody>
         </table>
-   
 
-    <h2>Custos de Itens de Divulgação</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Item</th>
-                <th>Quantidade</th>
-                <th>Preço por Unidade</th>
-                <th>Total</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr> <!--linha-->
-                <TD>Banner</TD>
-                <td><input type="number" id="quantidadeDivulgacao" onblur="multiplicarBanner()"></td>
-                <td><input type="number" id="precoDivulgacao" onblur="multiplicarBanner()"></td>
-                <td><input type="number" id="totalBanner" readonly></td>
-            </tr>
-            <tr> <!--linha-->
-                <TD>Crachá</TD>
-                <td><input type="number" id="quantidadeDivulgacao2" onblur="multiplicarCracha()"></td>
-                <td><input type="number" id="precoDivulgacao2" onblur="multiplicarCracha()"></td>
-                <td><input type="number" id="totalCracha" readonly></td>
-            </tr>
-            <tr> <!--linha-->
-                <TD>Camiseta</TD>
-                <td><input type="number" id="quantidadeDivulgacao3" onblur="multiplicarCamiseta()"></td>
-                <td><input type="number" id="precoDivulgacao3" onblur="multiplicarCamiseta()"></td>
-                <td><input type="number" id="totalCamiseta" readonly></td>
-            </tr>
-        </tbody>
-    </table>
-    <h2>Custos Totais</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Tipo</th>
-                <th>Total R$</th>
-                <th>Total $ (R$5,05)</th>
-                <th>Total € (R$5,33)</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Produtos Alimentícios</td>
-                <td><input type="number" id="totalAlimento" readonly></td>
-                <td><input type="number" id="totalAlimento2" readonly></td>
-                <td><input type="number" id="totalAlimento3" readonly></td>
-            </tr>
-            <tr>
-                <td>Divulgação</td>
-                <td><input type="number" id="totalItens" readonly></td>
-                <td><input type="number" id="totalItens2" readonly></td>
-                <td><input type="number" id="totalItens3" readonly></td>
-            </tr>
-            <tr>
-                <td>Custo Total do Evento</td>
-                <td><input type="number" id="totalEvento" readonly></td>
-                <td><input type="number" id="totalEvento2" readonly></td>
-                <td><input type="number" id="totalEvento3" readonly></td>
-        </tbody>
-    </table>
-    
-    
-    
-    <form id="idForm" action="https://app.headlessforms.cloud/api/v1/form-submission/nkJtA1ewcj" method="POST">
-        <textarea name="corpo" id="email" cols="70" rows="8" placeholder="O texto do seu e-mail."required></textarea>
-        <input type="button" class="botao" value="Gerar Texto" onclick="montarTexto()">
-        <input type="submit" value="Enviar" onclick="" disabled id="enviar">
-    </form>
-</div>
+
+        <h2>Custos de Itens de Divulgação</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Quantidade</th>
+                    <th>Preço por Unidade</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr> <!--linha-->
+                    <TD>Banner</TD>
+                    <td><input type="number" id="quantidadeDivulgacao" onblur="multiplicarBanner()"></td>
+                    <td><input type="number" id="precoDivulgacao" onblur="multiplicarBanner()"></td>
+                    <td><input type="number" id="totalBanner" readonly></td>
+                </tr>
+                <tr> <!--linha-->
+                    <TD>Crachá</TD>
+                    <td><input type="number" id="quantidadeDivulgacao2" onblur="multiplicarCracha()"></td>
+                    <td><input type="number" id="precoDivulgacao2" onblur="multiplicarCracha()"></td>
+                    <td><input type="number" id="totalCracha" readonly></td>
+                </tr>
+                <tr> <!--linha-->
+                    <TD>Camiseta</TD>
+                    <td><input type="number" id="quantidadeDivulgacao3" onblur="multiplicarCamiseta()"></td>
+                    <td><input type="number" id="precoDivulgacao3" onblur="multiplicarCamiseta()"></td>
+                    <td><input type="number" id="totalCamiseta" readonly></td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Custos Totais</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Tipo</th>
+                    <th>Total R$</th>
+                    <th>Total $ (R$5,05)</th>
+                    <th>Total € (R$5,33)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Produtos Alimentícios</td>
+                    <td><input type="number" id="totalAlimento" readonly></td>
+                    <td><input type="number" id="totalAlimento2" readonly></td>
+                    <td><input type="number" id="totalAlimento3" readonly></td>
+                </tr>
+                <tr>
+                    <td>Divulgação</td>
+                    <td><input type="number" id="totalItens" readonly></td>
+                    <td><input type="number" id="totalItens2" readonly></td>
+                    <td><input type="number" id="totalItens3" readonly></td>
+                </tr>
+                <tr>
+                    <td>Custo Total do Evento</td>
+                    <td><input type="number" id="totalEvento" readonly></td>
+                    <td><input type="number" id="totalEvento2" readonly></td>
+                    <td><input type="number" id="totalEvento3" readonly></td>
+            </tbody>
+        </table>
+
+
+
+        <form id="idForm" action="https://app.headlessforms.cloud/api/v1/form-submission/nkJtA1ewcj" method="POST">
+            <textarea name="corpo" id="email" cols="70" rows="8" placeholder="O texto do seu e-mail."
+                required readonly></textarea>
+            <input type="button" class="botao" value="Gerar Texto" onclick="montarTexto()">
+            <input type="submit" value="Enviar" onclick="" disabled id="enviar">
+        </form>
+    </section>
 </body>
 
 </html>
